@@ -1,0 +1,54 @@
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <app-sidebar></app-sidebar>
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                      <div class="dash-header">
+                        <div class="dash-title">
+                          <h1>Edit Task</h1>
+                        </div>
+                      </div>
+                      <div class="task-form">
+                        <form [formGroup]="d" (ngSubmit)="edit()">
+                          <div class="form-group form-row">
+                            <label class="col-md-3">Title <span class="required">*</span></label>
+                            <div class="col-md-9">
+                              <input type="text" formControlName="title" class="form-control" placeholder="Task Title">
+                            </div>
+                          </div>
+                  
+                          <div class="form-group form-row">
+                            <label class="col-md-3">Description <span class="required">*</span></label>
+                            <div class="col-md-9">
+                              <textarea formControlName="description" rows="5" class="form-control" placeholder="Description"></textarea>
+                            </div>
+                          </div>
+                  
+                          <div class="form-group form-row">
+                            <label class="col-md-3">Status <span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <select formControlName="status" class="form-control">
+                                    <option value="" disabled>Select Task Status</option>
+                                    <option *ngFor="let status of taskStatuses" [value]="status">{{ status }}</option>
+                                  </select>                                  
+                            </div>
+                          </div>
+                  
+                          <div class="form-group form-row">
+                            <div class="col-md-9 offset-md-3">
+                              <button type="submit" class="btn btn-primary" [disabled]="d.invalid">Save</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+</section>

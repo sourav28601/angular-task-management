@@ -1,0 +1,58 @@
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <app-sidebar></app-sidebar>
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h3>Task List</h3>
+                            </div><br><br>
+                            <div class="dash-nav">
+                                <a [routerLink]="['/create-task']" routerLinkActive="router-link-active"  class="btn btn-success">Create Task</a>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                              <thead>
+                                <tr>
+                                  <th>S. No.</th>
+                                  <th>Title</th>
+                                  <th>Description</th>
+                                  <th>Status</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let task of tasks; let i = index">
+                                  <td>{{ i + 1 }}</td>
+                                  <td>{{ task.title }}</td>
+                                  <td>{{ task.description }}</td>
+                                  <td>{{ task.status }}</td>
+                                  <td>
+                                    <a [routerLink]="['/update-task', task._id]"
+                                      [queryParams]="{ editMode: true }"
+                                      routerLinkActive="router-link-active"
+                                      class="btn btn-success">
+                                      <i class="fas fa-edit"></i>
+                                    </a>&nbsp;
+                                    <a class="btn btn-danger" (click)="deleteTask(task._id)">
+                                      <i class="far fa-trash-alt"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

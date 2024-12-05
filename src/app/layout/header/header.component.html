@@ -1,0 +1,38 @@
+<nav class="p-3 bg-secondary text-white navbar navbar-expand-lg navbar-dark ">
+    <div class="container ">
+      <a routerLinkActive="active"  href="#" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img src="/assets/assets/images/logo(2).png" width="60" height="45" alt=""
+          style="border-radius:40px;margin-right: 10px;" class="bg-warning">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul
+          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a routerLink='/home' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page" class="nav-link px-2 text-white">Home</a></li>
+          <li class="nav-item"><a routerLink='/about' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page" class="nav-link px-2 text-white">About</a></li>
+          <li class="nav-item"><a routerLink='/contact' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page" class="nav-link px-2 text-white">Contact</a></li>
+          <li class="nav-item"><a routerLink='/user-blog' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page" class="nav-link px-2 text-white">Blog</a></li>
+          <!-- <li class="nav-item"><a href="/login" class="nav-link px-2 text-white">Login</a></li> -->
+        </ul>
+  
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+  
+        <div class="mx-2">
+          <!-- <button type="button" class="btn btn-outline-light me-2" >
+            <a style="cursor:pointer"  class="text-decoration-none text-dark">Logout</a>
+          </button> -->
+          <button type="button" class="btn btn-outline-info me-2" >
+            <a  class="text-decoration-none text-dark" routerLink='/login' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page">Login</a>
+          </button>
+          <button type="button" class="btn btn-warning">
+            <a class="text-decoration-none text-dark" routerLink='/signup' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page">Sign-up</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
